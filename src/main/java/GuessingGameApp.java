@@ -14,12 +14,12 @@ public class GuessingGameApp {
 
         // Instruction print outs.
         System.out.println("Welcome to the Guessing Game!");
-        System.out.println("You will be given three attempts to guess a random number (1-10) correctly.");
+        System.out.println("You will be given four attempts to guess a random number (1-10) correctly.");
         System.out.println("If you guess the number correctly, you win the game.");
         System.out.println("Input '0' to receive instructions again.");
         System.out.println("Input '-1' to exit the game.");
 
-        while (attempts <= 3) {
+        while (attempts <= 4) {
             System.out.println("Please input a number between 1 and 10.");
             int guess = userInput.nextInt();
             System.out.println("User input: " + guess);
@@ -28,7 +28,7 @@ public class GuessingGameApp {
                 continue;
             }
             if (guess == 0) {
-                System.out.println("You will be given three attempts to guess a random number (1-10) correctly.");
+                System.out.println("You will be given four attempts to guess a random number (1-10) correctly.");
                 System.out.println("If you guess the number correctly, you win the game.");
                 System.out.println("Input '0' to receive instructions again.");
                 System.out.println("Input '-1' to exit the game.");
@@ -49,11 +49,10 @@ public class GuessingGameApp {
                 System.out.println("Try guessing a higher number!");
                 attempts++;
             }
-            
         }
-        if (attempts > 3) {
+        if (attempts > 4) {
             System.out.println("Sorry you have run out of guesses!");
-            System.out.println("The correct number was " + randomNumber);
+            System.out.println("The correct number was: " + randomNumber);
         }
         userInput.close();
     }
