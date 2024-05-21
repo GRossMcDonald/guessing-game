@@ -7,7 +7,7 @@ public class GuessingGameApp {
         Scanner userInput = new Scanner(System.in);
         Random random = new Random();
         int randomNumber = random.nextInt(10) + 1;
-        int attempts = 1;
+        int attempts = 0;
 
         // Just for testing purposes.
         System.out.println("Random Number: " + randomNumber);
@@ -19,7 +19,7 @@ public class GuessingGameApp {
         System.out.println("Input '0' to receive instructions again.");
         System.out.println("Input '-1' to exit the game.");
 
-        while (attempts <= 4) {
+        while (attempts <= 3) {
             System.out.println("Please input a number between 1 and 10.");
             int guess = userInput.nextInt();
             System.out.println("User input: " + guess);
@@ -50,7 +50,7 @@ public class GuessingGameApp {
                 attempts++;
             }
         }
-        if (attempts > 4) {
+        if (attempts > 3) {
             System.out.println("Sorry you have run out of guesses!");
             System.out.println("The correct number was: " + randomNumber);
         }
