@@ -8,9 +8,10 @@ public class GuessingGameApp {
         Random random = new Random();
         int randomNumber = random.nextInt(10) + 1;
         int attempts = 0;
+        int score = 400;
 
         // Just for testing purposes.
-        System.out.println("Random Number: " + randomNumber);
+        //System.out.println("Random Number: " + randomNumber);
 
         // Instruction print outs.
         System.out.println("Welcome to the Guessing Game!");
@@ -39,15 +40,28 @@ public class GuessingGameApp {
                 break;
             }
             if (guess == randomNumber) {
-                System.out.println("That's the correct guess! You win!");
+                if (attempts == 0) {
+                System.out.println("That's the correct guess! You won on your 1st attempt! Score: " + score);
                 break;
+                } else if (attempts == 1) {
+                    System.out.println("That's the correct guess! You won on your 2nd attempt! Score: " + score);
+                    break;
+                } else if (attempts == 2) {
+                    System.out.println("That's the correct guess! You won on your 3rd attempt! Score: " + score);
+                    break;
+                } else {
+                    System.out.println("That's the correct guess! You won on your 4th attempt! Score: " + score);
+                break;
+                }
             }
             if (guess > randomNumber) {
                 System.out.println("Try guessing a lower number!");
                 attempts++;
+                score -= 100;
             } else {
                 System.out.println("Try guessing a higher number!");
                 attempts++;
+                score -= 100;
             }
         }
         if (attempts > 3) {
